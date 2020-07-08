@@ -1,6 +1,6 @@
 # JSIL Compilation Example
 
-This is an example of compilation of a C# class library using [JSIL](https://github.com/sq/JSIL), and using it in a front-end page.
+This is an example of compilation of a C# class library using [JSIL](https://github.com/sq/JSIL), and using it in a front-end page. This is useful since it allows for sharing of DTO or logic between a backend API and frontend.
 
 The Libraries folder is produced by building the JSIL project.
 
