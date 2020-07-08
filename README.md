@@ -2,9 +2,7 @@
 
 This is an example of compilation of a C# class library using [JSIL](https://github.com/sq/JSIL), and using it in a front-end page.
 
-## Setup
-
-Run `git submodule update --init --recursive` to install the submodules (JSIL)
+The Libraries folder is produced by building the JSIL project.
 
 ## Compilation
 
