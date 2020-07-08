@@ -3,18 +3,10 @@
 	<head>
 		<title>JSIL Example</title>
 
-		<script>
-			var jsilConfig = {
-				libraryRoot: 'Libraries/',
-				manifestRoot: 'js/',
-				scriptRoot: 'js/',
+		<script src="JSIL/jsilConfig.js"></script> <!-- JSIL Configuration -->
+		<script src="Libraries/JSIL.js"></script> <!-- JSIL Core -->
+		<script src="JSIL/jsilOverrides.js"></script> <!-- Override default JSIL functions -->
 
-				manifests: [
-					"ExampleJsilCompilation.dll"
-				]
-			};
-		</script>
-		<script src="Libraries/JSIL.js" type="text/javascript"></script>
 		<script>
 			function onButtonClick() {
 				if (!$jsilbrowserstate.isLoaded) { // JSIL must be loaded or the tab will freeze!
