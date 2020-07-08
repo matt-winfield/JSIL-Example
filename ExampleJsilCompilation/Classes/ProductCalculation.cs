@@ -6,7 +6,7 @@ namespace ExampleJsilCompilation.Classes
     {
         public int Calculate(params int[] values)
         {
-            int total = 0;
+            int total = 1;
             foreach(var value in values)
             {
                 total *= value;

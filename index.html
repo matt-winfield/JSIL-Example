@@ -1,0 +1,47 @@
+<html>
+
+	<head>
+		<title>JSIL Example</title>
+	</head>
+
+	<body onload="onLoad()">
+		<script type="text/javascript">
+			var jsilConfig = {
+				libraryRoot: 'Libraries/',
+				manifestRoot: 'js/',
+				scriptRoot: 'js/',
+				fileRoot: 'js/',
+				assetRoot: 'js/',
+
+				manifests: [
+					"ExampleJsilCompilation.dll"
+				]
+			};
+		</script>
+		<script src="Libraries/JSIL.js" type="text/javascript"></script>
+		<script>
+			function onButtonClick() {
+				var sumOutputDiv = document.getElementById('sumOutput');
+				var productOutputDiv = document.getElementById('productOutput');
+
+				var assembly = JSIL.GetAssembly("ExampleJsilCompilation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+
+				var sumCalculation = new assembly.ExampleJsilCompilation.Classes.SumCalculation();
+				var productCalculation = new assembly.ExampleJsilCompilation.Classes.ProductCalculation();
+
+				var numbers = [1, 2, 3, 4, 5];
+
+				var sum = sumCalculation.Calculate(numbers);
+				var product = productCalculation.Calculate(numbers);
+
+				sumOutputDiv.innerText = "Sum: " + sum;
+				productOutputDiv.innerText = "Product: " + product;
+			}
+		</script>
+
+		<button onclick="onButtonClick()">Click Me!</button>
+		<div id="sumOutput"></div>
+		<div id="productOutput"></div>
+	</body>
+
+</html>
