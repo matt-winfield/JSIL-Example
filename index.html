@@ -17,9 +17,6 @@
 		<script src="Libraries/JSIL.js" type="text/javascript"></script>
 		<script>
 			function onButtonClick() {
-				var sumOutputDiv = document.getElementById('sumOutput');
-				var productOutputDiv = document.getElementById('productOutput');
-
 				var assembly = JSIL.GetAssembly("ExampleJsilCompilation");
 
 				var sumCalculation = new assembly.ExampleJsilCompilation.Classes.SumCalculation();
@@ -30,6 +27,12 @@
 				var sum = sumCalculation.Calculate(numbers);
 				var product = productCalculation.Calculate(numbers);
 
+				displayResults(sum, product);
+			}
+
+			function displayResults(sum, product) {
+				var sumOutputDiv = document.getElementById('sumOutput');
+				var productOutputDiv = document.getElementById('productOutput');
 				sumOutputDiv.innerText = "Sum: " + sum;
 				productOutputDiv.innerText = "Product: " + product;
 			}
