@@ -17,6 +17,11 @@
 		<script src="Libraries/JSIL.js" type="text/javascript"></script>
 		<script>
 			function onButtonClick() {
+				if (!$jsilbrowserstate.isLoaded) { // JSIL must be loaded or the tab will freeze!
+					console.warn("Attempted to execute JSIL code before loading complete!");
+					return;
+				}
+
 				var assembly = JSIL.GetAssembly("ExampleJsilCompilation");
 
 				var sumCalculation = new assembly.ExampleJsilCompilation.Classes.SumCalculation();
