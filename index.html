@@ -2,10 +2,8 @@
 
 	<head>
 		<title>JSIL Example</title>
-	</head>
 
-	<body onload="onLoad()">
-		<script type="text/javascript">
+		<script>
 			var jsilConfig = {
 				libraryRoot: 'Libraries/',
 				manifestRoot: 'js/',
@@ -22,7 +20,7 @@
 				var sumOutputDiv = document.getElementById('sumOutput');
 				var productOutputDiv = document.getElementById('productOutput');
 
-				var assembly = JSIL.GetAssembly("ExampleJsilCompilation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+				var assembly = JSIL.GetAssembly("ExampleJsilCompilation");
 
 				var sumCalculation = new assembly.ExampleJsilCompilation.Classes.SumCalculation();
 				var productCalculation = new assembly.ExampleJsilCompilation.Classes.ProductCalculation();
@@ -36,7 +34,9 @@
 				productOutputDiv.innerText = "Product: " + product;
 			}
 		</script>
+	</head>
 
+	<body onload="onLoad()">
 		<button onclick="onButtonClick()">Click Me!</button>
 		<div id="sumOutput"></div>
 		<div id="productOutput"></div>
